@@ -29,6 +29,7 @@ module.exports = {
                     inline: true,
                 },
             )
+            .setFooter({ text: `${interaction.user.tag}.`, iconURL: interaction.user.displayAvatarURL({ dynamic: true }) })
     }
   
 }
