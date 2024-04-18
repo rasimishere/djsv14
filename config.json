@@ -1,4 +1,5 @@
 {
   "token": "YourBotToken",
+  "webhook": "Webhook URL",
   "oynuyor": "Bot Status"
 }
