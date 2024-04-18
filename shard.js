@@ -23,4 +23,8 @@ manager.on('shardCreate', shard => {
       shard.on("death", () => {
             wb.send({ embeds: [new EmbedBuilder().setDescription(`**<a:loading:1211900247421362206> \`#${shard.id}\` - ID'li shardın bağlantısı koptu, yeniden başlatılmayı deniyor**`).setColor("Red")] });
         })
-} )
+      shard.on("error", (err) => {
+            wb.send({ embeds: [new EmbedBuilder().setDescription(`**⛔ ‼️ \`#${shard.id}\` - ID'li shard'a bir hata oluştu\n\n• ${err}**`).setColor("Red")] });
+        });
+} 
+})
