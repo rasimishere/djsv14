@@ -10,4 +10,10 @@ const manager = new ShardingManager('bot.js', { token, respawn: true, totalShard
 manager.on('shardCreate', shard => {
       console.log(chalk.green(`[SHARD SYSTEM] `) + chalk.red(`#${shard.id} ID'li shard başarıyla başlatıldı`));
 
+      if(wb) {
+        shard.on("disconnect", () => {
+            wb.send({ embeds: [new EmbedBuilder().setDescription(`**<:re:1211900252072968253> \`#${shard.id}\` - ID'li shardın bağlantısı koptu, yeniden başlatılmayı deniyor**`).setColor("Red")] });
+        });
+      
+
 } )
