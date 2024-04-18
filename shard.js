@@ -27,4 +27,9 @@ manager.on('shardCreate', shard => {
             wb.send({ embeds: [new EmbedBuilder().setDescription(`**⛔ ‼️ \`#${shard.id}\` - ID'li shard'a bir hata oluştu\n\n• ${err}**`).setColor("Red")] });
         });
 } 
-})
+});
+
+manager.spawn().then(() => {
+    if (wb) wb.send({ embeds: [new EmbedBuilder().setDescription(`<a:mutlu:1211916969310429255> **Bütün shard'lar başarıyla başlatıldı ve kullanıma hazır**`).setColor("DarkPurple")] });
+    console.log(chalk.green(`[SHARD SYSTEM] `) + chalk.red(`Bot Aktif Edildi !`));
+});
