@@ -30,6 +30,7 @@ module.exports = {
                 },
             )
             .setFooter({ text: `${interaction.user.tag}.`, iconURL: interaction.user.displayAvatarURL({ dynamic: true }) })
+            .setTimestamp()
     }
   
 }
