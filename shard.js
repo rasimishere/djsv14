@@ -6,3 +6,8 @@ let wb;
 
 
 const manager = new ShardingManager('bot.js', { token, respawn: true, totalShards });
+
+manager.on('shardCreate', shard => {
+      console.log(chalk.green(`[SHARD SYSTEM] `) + chalk.red(`#${shard.id} ID'li shard başarıyla başlatıldı`));
+
+} )
