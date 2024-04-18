@@ -1,5 +1,6 @@
 {
   "token": "YourBotToken",
   "webhook": "Webhook URL",
-  "oynuyor": "Bot Status"
+  "oynuyor": "Bot Status",
+  "shard": 2
 }
