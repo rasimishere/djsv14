@@ -7,5 +7,12 @@ module.exports = {
         .setName("ping")
         .setDescription("ping"),
 
+        run: async (client, interaction) => {
+
+
+
+        const ping = client.ws.ping + "ms"
+            
+    }
   
 }
