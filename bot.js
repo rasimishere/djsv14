@@ -10,5 +10,9 @@ const { readdirSync } = require("fs");
 
 let token = config.token;
 
+client.commands = new Collection();
+client.slashcommands = new Collection();
+client.commandaliases = new Collection();
+
 
 client.login(config.token);
