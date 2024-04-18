@@ -43,5 +43,13 @@ client.on(Events.ClientReady, async () => {
     console.log(chalk.red(`[SUCCESS]`) + chalk.green(` ${client.user.username} Aktif Edildi!`));
 });
 
+readdirSync("./events").forEach(async (file) => {
+    const event = await require(`./events/${file}`);
+    if (event.once) {
+        client.once(event.name, (...args) => event.execute(...args));
+    } else {
+        client.on(event.name, (...args) => event.execute(...args));
+    }
+});
 
 client.login(config.token);
