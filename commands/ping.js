@@ -17,7 +17,18 @@ module.exports = {
             .setColor('#5865F2')
             .setTitle(`${client.user.username} Ping!`)
             .setAuthor({ name: interaction.user.tag, iconURL: interaction.user.displayAvatarURL({ dynamic: true }) })
-            
+            .addFields(
+                {
+                    name: "Bot Delay",
+                    value: "```asciidoc\n= " + ping + " =\n```",
+                    inline: true,
+                },
+                {
+                    name: "Message Delay",
+                    value: "```asciidoc\n= " + Math.floor(new Date().getTime() - interaction.createdTimestamp) + "ms =\n```",
+                    inline: true,
+                },
+            )
     }
   
 }
