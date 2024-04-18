@@ -14,6 +14,9 @@ manager.on('shardCreate', shard => {
         shard.on("disconnect", () => {
             wb.send({ embeds: [new EmbedBuilder().setDescription(`**<:re:1211900252072968253> \`#${shard.id}\` - ID'li shardın bağlantısı koptu, yeniden başlatılmayı deniyor**`).setColor("Red")] });
         });
+         shard.on("reconnecting", () => {
+            wb.send({ embeds: [new EmbedBuilder().setDescription(`**<a:loading:1211900247421362206> \`#${shard.id}\` - ID'li shard yeniden başlatılıyor**`).setColor("Orange")] });
+        });
       
 
 } )
